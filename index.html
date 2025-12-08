@@ -12,15 +12,12 @@
             margin: 0;
             padding: 0;
             font-family: 'Manrope', sans-serif;
-            
-            /* ĐÃ ĐỔI MÀU NỀN SANG XANH #E3F2FD */
-            background-color: #E3F2FD;
-            
+            background-color: #E3F2FD; /* Màu nền Xanh Băng */
             color: #1a1a1a;
             scroll-behavior: smooth;
         }
 
-        /* --- 2. HERO SECTION --- */
+        /* --- 2. HERO SECTION (MÀN HÌNH CHÍNH) --- */
         .hero-split {
             display: flex;
             min-height: 100vh;
@@ -28,20 +25,18 @@
             overflow: hidden;
         }
 
-        /* Cột Trái */
+        /* Cột Trái: Chữ */
         .hero-left {
             flex: 1;
             padding: 4rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            
-            /* ĐÃ ĐỔI MÀU NỀN CỘT TRÁI ĐỂ KHỚP VỚI TRANG WEB */
-            background-color: #E3F2FD;
-            
+            background-color: #E3F2FD; /* Đồng bộ màu nền */
             position: relative;
         }
 
+        /* Tên Lớn */
         h1.big-name {
             font-family: 'Anton', sans-serif;
             font-size: 5.5rem;
@@ -52,6 +47,7 @@
             letter-spacing: 1px;
         }
 
+        /* Phụ đề */
         .subtitle-wrapper {
             margin-top: 2rem;
             display: flex;
@@ -61,16 +57,17 @@
 
         .asterisk {
             font-size: 2rem;
-            color: #C5A47E; /* Màu vàng nâu tạo điểm nhấn trên nền xanh */
+            color: #C5A47E; /* Điểm nhấn màu vàng nâu */
         }
 
         .subtitle-text {
             font-size: 1.1rem;
             font-weight: 600;
-            color: #333; /* Màu chữ đậm hơn một chút để dễ đọc trên nền xanh */
+            color: #333;
             line-height: 1.4;
         }
 
+        /* Nút Liên Hệ */
         .btn-touch {
             margin-top: 3rem;
             padding: 15px 35px;
@@ -90,13 +87,18 @@
             color: #fff;
         }
 
-        /* Cột Phải (Ảnh nền) */
+        /* --- CẤU HÌNH AVATAR (QUAN TRỌNG) --- */
+        /* Cột Phải: Dùng ảnh làm hình nền */
         .hero-right {
             flex: 1;
-            /* LƯU Ý: Ảnh phải tên là avatar.jpg */
+            
+            /* LỆNH HIỂN THỊ ẢNH:
+               Đảm bảo bạn đã upload file tên là 'avatar.jpg' lên GitHub 
+               cùng chỗ với file index.html */
             background-image: url('avatar.jpg'); 
-            background-size: cover;
-            background-position: center;
+            
+            background-size: cover; /* Ảnh tự co giãn vừa khung */
+            background-position: center; /* Căn giữa ảnh */
             background-repeat: no-repeat;
             min-height: 100vh;
         }
@@ -123,7 +125,7 @@
         }
 
         .info-item p {
-            margin-bottom: 15px;
+            margin-bottom: 5px;
             text-align: justify;
         }
 
@@ -131,6 +133,7 @@
             font-size: 1.3rem;
             margin-bottom: 5px;
             font-weight: 700;
+            color: #000;
         }
         
         .skill-label {
@@ -140,13 +143,13 @@
             width: 180px; 
         }
 
-        /* Mobile Responsive */
+        /* Mobile Responsive (Giao diện điện thoại) */
         @media (max-width: 768px) {
             .hero-split {
-                flex-direction: column-reverse;
+                flex-direction: column-reverse; /* Ảnh lên trên, chữ xuống dưới */
             }
             .hero-right {
-                min-height: 50vh;
+                min-height: 50vh; /* Ảnh chiếm nửa màn hình */
                 width: 100%;
             }
             .hero-left {
@@ -195,7 +198,7 @@
         
         <h2 class="section-title">About Me</h2>
         <div class="info-item">
-            <p style="font-size: 1.1rem; line-height: 1.8;">
+            <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 15px;">
                 Aspiring business analytics intern with strong problem-solving skills and hands-on experience in data modeling and dashboard creation. Demonstrated project management ability through team leadership, task planning, and execution of data-driven projects. Passionate about using analytics to support strategic decisions.
             </p>
             <p>
@@ -204,10 +207,17 @@
         </div>
 
         <h2 class="section-title">Education</h2>
+        
         <div class="info-item">
             <h3>Foreign Trade University (FTU)</h3>
-            <p><em>Hanoi, Vietnam</em></p>
-            <p>Major: International Business Economics</p>
+            <p><em>2023 - 2027</em></p>
+            <p>International Business Economics</p>
+        </div>
+
+        <div class="info-item">
+            <h3>Hochschule Trier - Trier University of Applied Sciences</h3>
+            <p><em>03/2025 - 08/2025</em></p>
+            <p>International Business - Exchange Student</p>
         </div>
 
         <h2 class="section-title">Skills & Expertise</h2>
