@@ -1,123 +1,235 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Của Tôi</title>
+    <title>Thai Thi My Hanh - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* 1. Cấu hình chung cho trang web */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        /* --- 1. THIẾT LẬP CHUNG --- */
+        body, html {
             margin: 0;
             padding: 0;
-            background-color: #ffffff;
-            color: #333;
-            line-height: 1.6;
+            font-family: 'Manrope', sans-serif;
+            background-color: #F9F8F4;
+            color: #1a1a1a;
+            scroll-behavior: smooth;
         }
 
-        /* 2. Căn giữa nội dung trang web */
-        .container {
-            max-width: 900px; /* Độ rộng tối đa của trang */
-            margin: 0 auto; /* Căn giữa màn hình */
-            padding: 50px 20px;
-            display: flex; /* Dùng Flexbox để chia cột */
-            align-items: center; /* Căn giữa theo chiều dọc */
-            flex-wrap: wrap; /* Tự xuống dòng trên điện thoại */
+        /* --- 2. HERO SECTION --- */
+        .hero-split {
+            display: flex;
+            min-height: 100vh;
+            width: 100%;
+            overflow: hidden;
         }
 
-        /* 3. Cột bên trái (Chữ) */
-        .content-column {
-            flex: 1; /* Chiếm phần còn lại */
-            padding-right: 40px;
-            min-width: 300px;
+        /* Cột Trái */
+        .hero-left {
+            flex: 1;
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #F9F8F4;
+            position: relative;
         }
 
-        /* 4. Cột bên phải (Ảnh) */
-        .image-column {
-            flex: 0 0 300px; /* Chiếm cố định 300px */
-            text-align: center;
+        h1.big-name {
+            font-family: 'Anton', sans-serif;
+            font-size: 5.5rem;
+            line-height: 1;
+            text-transform: uppercase;
+            margin: 0;
+            color: #000;
+            letter-spacing: 1px;
         }
 
-        /* 5. Chỉnh sửa ảnh đại diện */
-        .profile-pic {
-            width: 280px;
-            height: 350px;
-            object-fit: cover; /* Cắt ảnh vừa khung mà không bị méo */
-            border-radius: 150px; /* Bo tròn kiểu hình oval như mẫu */
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Đổ bóng nhẹ cho đẹp */
+        .subtitle-wrapper {
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
 
-        /* 6. Trang trí chữ */
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            font-weight: normal;
+        .asterisk {
+            font-size: 2rem;
+            color: #C5A47E;
         }
 
-        .bio {
+        .subtitle-text {
             font-size: 1.1rem;
-            margin-bottom: 20px;
+            font-weight: 600;
+            color: #444;
+            line-height: 1.4;
         }
 
-        .links a {
-            text-decoration: none;
-            color: #2c3e50;
+        .btn-touch {
+            margin-top: 3rem;
+            padding: 15px 35px;
+            border: 2px solid #000;
+            background: transparent;
+            color: #000;
+            text-transform: uppercase;
             font-weight: bold;
-            margin-right: 15px;
+            text-decoration: none;
+            display: inline-block;
+            width: fit-content;
+            transition: all 0.3s ease;
         }
 
-        .links a:hover {
-            color: #3498db; /* Đổi màu khi di chuột vào */
+        .btn-touch:hover {
+            background: #000;
+            color: #fff;
         }
 
-        h2 {
-            margin-top: 40px;
-            font-size: 1.5rem;
-            border-bottom: 1px solid #eee; /* Đường kẻ mờ dưới tiêu đề */
+        /* Cột Phải (Ảnh nền) */
+        .hero-right {
+            flex: 1;
+            /* LƯU Ý: Ảnh phải tên là avatar.jpg */
+            background-image: url('avatar.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+        }
+
+        /* --- 3. NỘI DUNG CHI TIẾT --- */
+        .content-section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        h2.section-title {
+            font-family: 'Anton', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #000;
             padding-bottom: 10px;
+            text-transform: uppercase;
+            margin-top: 60px;
+        }
+
+        .info-item {
+            margin-bottom: 30px;
+        }
+
+        .info-item p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .info-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            font-weight: 700;
         }
         
-        /* Giao diện Mobile: Khi màn hình nhỏ thì ảnh lên trên hoặc xuống dưới */
+        /* Tô đậm tiêu đề kỹ năng */
+        .skill-label {
+            font-weight: 700;
+            color: #000;
+            display: inline-block;
+            width: 180px; /* Căn thẳng hàng các mục */
+        }
+
+        /* Mobile Responsive */
         @media (max-width: 768px) {
-            .container {
-                flex-direction: column-reverse; /* Đảo ngược: Ảnh lên trên, chữ xuống dưới */
+            .hero-split {
+                flex-direction: column-reverse;
+            }
+            .hero-right {
+                min-height: 50vh;
+                width: 100%;
+            }
+            .hero-left {
+                padding: 2rem;
                 text-align: center;
             }
-            .content-column {
-                padding-right: 0;
+            h1.big-name {
+                font-size: 3rem;
             }
-            .image-column {
-                margin-bottom: 30px;
+            .subtitle-wrapper {
+                justify-content: center;
+                text-align: left;
+            }
+            .skill-label {
+                width: 100%; /* Trên mobile thì xuống dòng */
+                display: block;
+                margin-bottom: 5px;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="content-column">
-            <h1>Thái Thị Mỹ Hạnh </h1>
-            
-            <p class="bio">
-                Tôi là sinh viên tại <strong>Trường Đại học Ngoại Thương </strong> ở Hà Nội, Việt Nam.
-            </p>
+    <div class="hero-split">
+        <div class="hero-left">
+            <h1 class="big-name">
+                Thai Thi<br>My Hanh
+            </h1>
 
-            <div class="links">
-                <a href="k62.2314110095@ftu.edu.vn">Email</a> / 
-                <a href="https://github.com/HanhMyThai/HanhMyThai.github.io">Github</a>
+            <div class="subtitle-wrapper">
+                <span class="asterisk">*</span>
+                <div class="subtitle-text">
+                    <strong>Aspiring Business Analytics Intern</strong><br>
+                    Foreign Trade University (FTU)
+                </div>
             </div>
 
-            <h2>Research (Nghiên cứu)</h2>
-            <p>
-                Tôi quan tâm đến các lĩnh vực như computer vision, deep learning,machine learning and generative AI. 
-            </p>
-            
-          
+            <a href="mailto:k62.2314110095@ftu.edu.vn" class="btn-touch">Contact Me</a>
         </div>
 
-        <div class="image-column">
-            <img src="images/avatar.jpg" alt="Ảnh đại diện" class="profile-pic">
+        <div class="hero-right"></div>
+    </div>
+
+
+    <div class="content-section">
+        
+        <h2 class="section-title">About Me</h2>
+        <div class="info-item">
+            <p style="font-size: 1.1rem; line-height: 1.8;">
+                Aspiring business analytics intern with strong problem-solving skills and hands-on experience in data modeling and dashboard creation. Demonstrated project management ability through team leadership, task planning, and execution of data-driven projects. Passionate about using analytics to support strategic decisions.
+            </p>
+            
+            <p>
+                <strong>Github:</strong> <a href="https://github.com/HanhMyThai" target="_blank" style="color:#000; font-weight:bold;">github.com/HanhMyThai</a>
+            </p>
         </div>
+
+        <h2 class="section-title">Education</h2>
+        <div class="info-item">
+            <h3>Foreign Trade University (FTU)</h3>
+            <p><em>Hanoi, Vietnam</em></p>
+            <p>Major: International Business Economics</p>
+        </div>
+
+        <h2 class="section-title">Skills & Expertise</h2>
+        <div class="info-item">
+            <p>
+                <span class="skill-label">Analytics:</span> 
+                SQL, Python (pandas, numpy), Excel, Power BI / Tableau
+            </p>
+            <p>
+                <span class="skill-label">Statistics:</span> 
+                Hypothesis testing, regression, predictive modeling
+            </p>
+            <p>
+                <span class="skill-label">Project Management:</span> 
+                Agile basics, Gantt charts, stakeholder alignment, risk tracking, Jira/Trello
+            </p>
+            <p>
+                <span class="skill-label">Business Tools:</span> 
+                Miro, Notion, project reports, documentation
+            </p>
+            <p>
+                <span class="skill-label">Soft Skills:</span> 
+                Communication, critical thinking, problem decomposition
+            </p>
+        </div>
+
     </div>
 
 </body>
