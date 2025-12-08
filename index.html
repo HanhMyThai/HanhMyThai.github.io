@@ -17,7 +17,7 @@
             scroll-behavior: smooth;
         }
 
-        /* --- 2. HERO SECTION (MÀN HÌNH CHÍNH) --- */
+        /* --- 2. HERO SECTION --- */
         .hero-split {
             display: flex;
             min-height: 100vh;
@@ -25,18 +25,17 @@
             overflow: hidden;
         }
 
-        /* Cột Trái: Chữ */
+        /* Cột Trái */
         .hero-left {
             flex: 1;
             padding: 4rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            background-color: #E3F2FD; /* Đồng bộ màu nền */
+            background-color: #E3F2FD;
             position: relative;
         }
 
-        /* Tên Lớn */
         h1.big-name {
             font-family: 'Anton', sans-serif;
             font-size: 5.5rem;
@@ -47,7 +46,6 @@
             letter-spacing: 1px;
         }
 
-        /* Phụ đề */
         .subtitle-wrapper {
             margin-top: 2rem;
             display: flex;
@@ -57,7 +55,7 @@
 
         .asterisk {
             font-size: 2rem;
-            color: #C5A47E; /* Điểm nhấn màu vàng nâu */
+            color: #C5A47E;
         }
 
         .subtitle-text {
@@ -67,7 +65,6 @@
             line-height: 1.4;
         }
 
-        /* Nút Liên Hệ */
         .btn-touch {
             margin-top: 3rem;
             padding: 15px 35px;
@@ -88,17 +85,14 @@
         }
 
         /* --- CẤU HÌNH AVATAR (QUAN TRỌNG) --- */
-        /* Cột Phải: Dùng ảnh làm hình nền */
         .hero-right {
             flex: 1;
             
-            /* LỆNH HIỂN THỊ ẢNH:
-               Đảm bảo bạn đã upload file tên là 'avatar.jpg' lên GitHub 
-               cùng chỗ với file index.html */
-            background-image: url('avatar.jpg'); 
+            /* ĐÃ SỬA ĐƯỜNG DẪN TẠI ĐÂY: Thêm 'images/' vào trước tên ảnh */
+            background-image: url('images/avatar.jpg'); 
             
-            background-size: cover; /* Ảnh tự co giãn vừa khung */
-            background-position: center; /* Căn giữa ảnh */
+            background-size: cover;
+            background-position: center;
             background-repeat: no-repeat;
             min-height: 100vh;
         }
@@ -143,13 +137,13 @@
             width: 180px; 
         }
 
-        /* Mobile Responsive (Giao diện điện thoại) */
+        /* Mobile Responsive */
         @media (max-width: 768px) {
             .hero-split {
-                flex-direction: column-reverse; /* Ảnh lên trên, chữ xuống dưới */
+                flex-direction: column-reverse;
             }
             .hero-right {
-                min-height: 50vh; /* Ảnh chiếm nửa màn hình */
+                min-height: 50vh;
                 width: 100%;
             }
             .hero-left {
@@ -211,7 +205,7 @@
         <div class="info-item">
             <h3>Foreign Trade University (FTU)</h3>
             <p><em>2023 - 2027</em></p>
-            <p>International Business Economics</p>
+            <p>Major: International Business Economics</p>
         </div>
 
         <div class="info-item">
